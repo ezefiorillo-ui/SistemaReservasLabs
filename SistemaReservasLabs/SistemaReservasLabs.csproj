@@ -8,4 +8,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Formularios\" />
+    <Folder Include="Logica\" />
+    <Folder Include="Repositorios\" />
+  </ItemGroup>
+
 </Project>
