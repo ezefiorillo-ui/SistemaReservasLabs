@@ -44,5 +44,14 @@ namespace SistemaReservasLaboratorios.Modelos
 
         // Útil para mostrar el rol en la UI sin usar un campo "TipoUsuario" propio.
         public abstract string ObtenerTipoUsuario();
+
+
+        // Para que el ComboBox muestre nombre y rol en vez del tipo del objeto
+        public override string ToString()
+        {
+            return $"{Nombre} ({ObtenerTipoUsuario()})";
+        }
+
     }
+
 }
