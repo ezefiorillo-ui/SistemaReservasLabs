@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SistemaReservasLaboratorios.Modelos
+namespace SistemaReservasLabs.Modelos
 {
     public class Laboratorio
     {

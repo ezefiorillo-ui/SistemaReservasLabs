@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SistemaReservasLaboratorios.Excepciones
+namespace SistemaReservasLabs.Excepciones
 {
     // Se lanza cuando un archivo .txt de datos no se puede leer, o su contenido
     // no respeta el formato esperado (separador "|", cantidad de campos, etc.)

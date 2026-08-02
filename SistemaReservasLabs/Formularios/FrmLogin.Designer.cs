@@ -60,6 +60,7 @@
             cmbUsuarios.Name = "cmbUsuarios";
             cmbUsuarios.Size = new Size(200, 23);
             cmbUsuarios.TabIndex = 2;
+            cmbUsuarios.SelectedIndexChanged += cmbUsuarios_SelectedIndexChanged;
             // 
             // btnIngresar
             // 
@@ -69,6 +70,7 @@
             btnIngresar.TabIndex = 3;
             btnIngresar.Text = "Ingresar";
             btnIngresar.UseVisualStyleBackColor = true;
+            btnIngresar.Click += btnIngresar_Click;  //bere
             // 
             // FrmLogin
             // 

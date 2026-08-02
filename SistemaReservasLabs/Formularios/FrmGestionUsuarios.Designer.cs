@@ -97,6 +97,7 @@
             btnAgregar.TabIndex = 6;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;   //bere
             // 
             // dgvUsuarios
             // 

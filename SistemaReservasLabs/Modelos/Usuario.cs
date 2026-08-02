@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SistemaReservasLaboratorios.Modelos
+namespace SistemaReservasLabs.Modelos
 {
     public abstract class Usuario
     {

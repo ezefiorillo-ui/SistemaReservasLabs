@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SistemaReservasLaboratorios.Excepciones
+namespace SistemaReservasLabs.Excepciones
 {
     // Se lanza cuando una nueva reserva pisa el horario de otra ya existente
     // en el mismo laboratorio y la misma fecha.
