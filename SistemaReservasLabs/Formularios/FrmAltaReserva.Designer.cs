@@ -126,6 +126,7 @@
             btnConfirmar.TabIndex = 9;
             btnConfirmar.Text = "Confirmar Reserva";
             btnConfirmar.UseVisualStyleBackColor = true;
+            btnConfirmar.Click += btnConfirmar_Click;
             // 
             // txtMotivo
             // 

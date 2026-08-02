@@ -61,6 +61,7 @@
             btnGenerar.TabIndex = 2;
             btnGenerar.Text = "Generar";
             btnGenerar.UseVisualStyleBackColor = true;
+            btnGenerar.Click += btnGenerar_Click;
             // 
             // dgvReporte
             // 

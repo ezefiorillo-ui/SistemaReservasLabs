@@ -133,6 +133,7 @@
             btnAgregar.TabIndex = 10;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click; //bere 
             // 
             // btnModificar
             // 
@@ -142,6 +143,7 @@
             btnModificar.TabIndex = 11;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click; // bere
             // 
             // btnEliminar
             // 
@@ -151,6 +153,7 @@
             btnEliminar.TabIndex = 12;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;      //bere
             // 
             // dgvLaboratorios
             // 
@@ -159,6 +162,7 @@
             dgvLaboratorios.Name = "dgvLaboratorios";
             dgvLaboratorios.Size = new Size(640, 280);
             dgvLaboratorios.TabIndex = 13;
+            dgvLaboratorios.CellClick += dgvLaboratorios_CellClick;   //bere
             // 
             // FrmGestionLaboratorios
             // 

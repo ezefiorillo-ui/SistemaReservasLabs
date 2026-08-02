@@ -80,6 +80,7 @@
             btnBuscar.TabIndex = 4;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // dataGridView1
             // 
@@ -97,6 +98,7 @@
             btnCancelar.TabIndex = 6;
             btnCancelar.Text = "Cancelar Reserva";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // FrmGrillaReservas
             // 

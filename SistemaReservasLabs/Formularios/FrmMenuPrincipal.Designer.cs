@@ -55,6 +55,7 @@
             button1.TabIndex = 1;
             button1.Text = "Gestión de Laboratorios";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += btnGestionLaboratorios_Click;
             // 
             // btnUsuarios
             // 
@@ -64,6 +65,7 @@
             btnUsuarios.TabIndex = 2;
             btnUsuarios.Text = "Gestión de Usuarios";
             btnUsuarios.UseVisualStyleBackColor = true;
+            btnUsuarios.Click += btnGestionUsuarios_Click;
             // 
             // btnNuevaReserva
             // 
@@ -73,6 +75,7 @@
             btnNuevaReserva.TabIndex = 3;
             btnNuevaReserva.Text = "Nueva Reserva";
             btnNuevaReserva.UseVisualStyleBackColor = true;
+            btnNuevaReserva.Click += btnAltaReserva_Click;
             // 
             // btnVerReservas
             // 
@@ -82,6 +85,7 @@
             btnVerReservas.TabIndex = 4;
             btnVerReservas.Text = "Ver Reservas";
             btnVerReservas.UseVisualStyleBackColor = true;
+            btnVerReservas.Click += btnGrillaReservas_Click;
             // 
             // btnReportes
             // 
@@ -91,6 +95,7 @@
             btnReportes.TabIndex = 5;
             btnReportes.Text = "Reportes";
             btnReportes.UseVisualStyleBackColor = true;
+            btnReportes.Click += btnReportes_Click;
             // 
             // btnCerrarSesion
             // 
@@ -100,6 +105,7 @@
             btnCerrarSesion.TabIndex = 6;
             btnCerrarSesion.Text = "Cerrar Sesión";
             btnCerrarSesion.UseVisualStyleBackColor = true;
+            btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
             // FrmMenuPrincipal
             // 
