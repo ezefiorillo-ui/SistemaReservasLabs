@@ -21,6 +21,12 @@ namespace SistemaReservasLabs.Logica
         public int CantidadReservas { get; set; }
     }
 
+    public class RankingLaboratorio
+    {
+        public string LaboratorioNombre { get; set; }
+        public int CantidadReservas { get; set; }
+    }
+
     public class GeneradorReportes
     {
         private readonly IRepositorio<Reserva> _repoReservas;
@@ -29,6 +35,9 @@ namespace SistemaReservasLabs.Logica
         {
             _repoReservas = repoReservas;
         }
+
+
+
 
         // Reporte 1: uso por laboratorio (cantidad de reservas y horas totales)
         public List<UsoPorLaboratorio> ObtenerUsoPorLaboratorio()
@@ -69,6 +78,19 @@ namespace SistemaReservasLabs.Logica
                 .Where(r => r.Fecha.Date == DateTime.Today
                          && r.Estado != EstadoReserva.Cancelada)
                 .OrderBy(r => r.HoraInicio)
+                .ToList();
+        }
+
+        //Reporte 4: ranking de reservas por laboratorio
+
+        public List<RankingLaboratorio> ObtenerRankingLaboratorios(int top = 10)
+        {
+            return _repoReservas.ListarTodos()
+                .Where(r => r.Estado != EstadoReserva.Cancelada)
+                .GroupBy(r => r.Laboratorio.Nombre)
+                .Select(g => new RankingLaboratorio { LaboratorioNombre = g.Key, CantidadReservas = g.Count() })
+                .OrderByDescending(x => x.CantidadReservas)
+                .Take(top)
                 .ToList();
         }
     }

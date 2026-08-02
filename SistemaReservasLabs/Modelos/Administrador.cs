@@ -9,7 +9,9 @@ namespace SistemaReservasLabs.Modelos
 
         public override bool PuedeCancelar(Reserva reserva) => true; // puede cancelar cualquier reserva
 
-        public override string ObtenerTipoUsuario() => "Administrador";
+		public override int ObtenerAnticipacionMaximaDias() => int.MaxValue; // sin límite
+
+		public override string ObtenerTipoUsuario() => "Administrador";
     }
 
 

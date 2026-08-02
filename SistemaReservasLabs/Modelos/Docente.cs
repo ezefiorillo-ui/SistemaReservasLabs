@@ -20,7 +20,9 @@ namespace SistemaReservasLabs.Modelos
         public override bool PuedeCancelar(Reserva reserva) =>
             reserva.Usuario.Legajo == this.Legajo; // solo sus propias reservas
 
-        public override string ObtenerTipoUsuario() => "Docente";
+		public override int ObtenerAnticipacionMaximaDias() => 30; // hasta 30 días antes
+
+		public override string ObtenerTipoUsuario() => "Docente";
     }
 
 }

@@ -15,6 +15,7 @@ namespace SistemaReservasLabs.Formularios
 
             cmbTipoReporte.Items.Add("Uso por Laboratorio");
             cmbTipoReporte.Items.Add("Ranking de Usuarios");
+            cmbTipoReporte.Items.Add("Ranking de Laboratorios");
             cmbTipoReporte.Items.Add("Reservas de Hoy");
             cmbTipoReporte.SelectedIndex = 0;
         }
@@ -35,6 +36,10 @@ namespace SistemaReservasLabs.Formularios
 
                 case "Reservas de Hoy":
                     dgvReporte.DataSource = _generadorReportes.ObtenerReservasDeHoy();
+                    break;
+
+                case "Ranking de Laboratorios":
+                    dgvReporte.DataSource = _generadorReportes.ObtenerRankingLaboratorios();
                     break;
             }
         }

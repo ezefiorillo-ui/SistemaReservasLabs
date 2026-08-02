@@ -28,6 +28,11 @@ namespace SistemaReservasLabs.Formularios
             _generadorReportes = generadorReportes;
             this.Text = $"Menú Principal - {_usuarioLogueado.Nombre} ({_usuarioLogueado.ObtenerTipoUsuario()})";
             lblUsuario.Text = $"Usuario: {_usuarioLogueado.Nombre} ({_usuarioLogueado.ObtenerTipoUsuario()})";
+
+            // Restricción por rol: solo Administrador gestiona laboratorios y usuarios
+            bool esAdministrador = _usuarioLogueado is Administrador;
+            button1.Visible = esAdministrador;       // Gestión de Laboratorios
+            btnUsuarios.Visible = esAdministrador;   // Gestión de Usuarios
         }
 
         private void btnGestionUsuarios_Click(object sender, EventArgs e)

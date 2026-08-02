@@ -11,9 +11,6 @@ namespace SistemaReservasLabs.Logica
         private readonly IRepositorio<Reserva> _repoReservas;
         private readonly IRepositorio<Laboratorio> _repoLaboratorios;
 
-        // Delegados + eventos: cualquier parte de la UI que se "suscriba"
-        // a estos eventos se entera automáticamente cuando pasa algo,
-        // sin que GestorReservas necesite conocer los formularios.
         public event Action<Reserva> ReservaCreada;
         public event Action<Reserva> ReservaCancelada;
 
@@ -41,7 +38,15 @@ namespace SistemaReservasLabs.Logica
                 throw new InvalidOperationException(
                     $"{nuevaReserva.Usuario.Nombre} alcanzó su límite semanal de reservas.");
 
-            // 3. Validar solapamiento con LINQ
+            // 3. Validar anticipación máxima según el rol
+            int diasDeAnticipacion = (nuevaReserva.Fecha.Date - DateTime.Today).Days;
+
+            if (diasDeAnticipacion > nuevaReserva.Usuario.ObtenerAnticipacionMaximaDias())
+                throw new InvalidOperationException(
+                    $"{nuevaReserva.Usuario.Nombre} no puede reservar con más de " +
+                    $"{nuevaReserva.Usuario.ObtenerAnticipacionMaximaDias()} días de anticipación.");
+
+            // 4. Validar solapamiento con LINQ
             bool haySolapamiento = _repoReservas.ListarTodos().Any(r =>
                 r.Laboratorio.Id == nuevaReserva.Laboratorio.Id &&
                 r.Fecha.Date == nuevaReserva.Fecha.Date &&
@@ -53,10 +58,8 @@ namespace SistemaReservasLabs.Logica
                 throw new ReservaSolapadaException(
                     $"Ya existe una reserva para el laboratorio {lab.Nombre} en ese horario.");
 
-            // 4. Si pasó todas las validaciones, se guarda
+            // 5. Si pasó todas las validaciones, se guarda
             _repoReservas.Agregar(nuevaReserva);
-
-            // Avisa a quien esté escuchando (ej: la UI, para refrescar la grilla)
             ReservaCreada?.Invoke(nuevaReserva);
         }
 
@@ -66,7 +69,6 @@ namespace SistemaReservasLabs.Logica
             if (reserva == null)
                 throw new InvalidOperationException($"No existe la reserva '{idReserva}'.");
 
-            // Polimorfismo: Alumno/Docente solo cancelan las propias, Administrador cualquiera
             if (!usuarioQueCancelca.PuedeCancelar(reserva))
                 throw new UnauthorizedAccessException("No tenés permiso para cancelar esta reserva.");
 

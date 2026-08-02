@@ -41,13 +41,13 @@ namespace SistemaReservasLabs.Modelos
         // los implementa a su manera -> polimorfismo, sin if/switch por TipoUsuario.
         public abstract int ObtenerLimiteReservasSemanales();
         public abstract bool PuedeCancelar(Reserva reserva);
+		public abstract int ObtenerAnticipacionMaximaDias();
 
-        // Útil para mostrar el rol en la UI sin usar un campo "TipoUsuario" propio.
-        public abstract string ObtenerTipoUsuario();
+		// Útil para mostrar el rol en la UI sin usar un campo "TipoUsuario" propio.
+		public abstract string ObtenerTipoUsuario();
 
-
-        // Para que el ComboBox muestre nombre y rol en vez del tipo del objeto
-        public override string ToString()
+		// Para que el ComboBox muestre nombre y rol en vez del tipo del objeto
+		public override string ToString()
         {
             return $"{Nombre} ({ObtenerTipoUsuario()})";
         }
