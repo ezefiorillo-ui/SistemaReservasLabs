@@ -91,16 +91,20 @@
             // 
             // btnAgregar
             // 
+            btnAgregar.BackColor = Color.SteelBlue;
+            btnAgregar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAgregar.ForeColor = Color.White;
             btnAgregar.Location = new Point(90, 100);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(100, 30);
             btnAgregar.TabIndex = 6;
             btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += btnAgregar_Click;   //bere
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // dgvUsuarios
             // 
+            dgvUsuarios.BackgroundColor = Color.FromArgb(224, 224, 224);
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuarios.Location = new Point(20, 150);
             dgvUsuarios.Name = "dgvUsuarios";
@@ -111,6 +115,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(584, 411);
             Controls.Add(dgvUsuarios);
             Controls.Add(btnAgregar);

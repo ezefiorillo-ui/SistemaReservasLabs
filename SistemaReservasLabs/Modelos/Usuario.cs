@@ -30,8 +30,11 @@ namespace SistemaReservasLabs.Modelos
                 _nombre = value;
             }
         }
-        //Constructor
-        protected Usuario(string legajo, string nombre)
+		public string Tipo => ObtenerTipoUsuario();
+
+
+		//Constructor
+		protected Usuario(string legajo, string nombre)
         {
             Legajo = legajo;
             Nombre = nombre;

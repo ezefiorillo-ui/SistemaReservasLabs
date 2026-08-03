@@ -49,68 +49,87 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.SteelBlue;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
             button1.Location = new Point(100, 70);
             button1.Name = "button1";
             button1.Size = new Size(220, 35);
             button1.TabIndex = 1;
             button1.Text = "Gestión de Laboratorios";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += btnGestionLaboratorios_Click;
             // 
             // btnUsuarios
             // 
+            btnUsuarios.BackColor = Color.SteelBlue;
+            btnUsuarios.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnUsuarios.ForeColor = Color.White;
             btnUsuarios.Location = new Point(100, 115);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Size = new Size(220, 35);
             btnUsuarios.TabIndex = 2;
             btnUsuarios.Text = "Gestión de Usuarios";
-            btnUsuarios.UseVisualStyleBackColor = true;
+            btnUsuarios.UseVisualStyleBackColor = false;
             btnUsuarios.Click += btnGestionUsuarios_Click;
             // 
             // btnNuevaReserva
             // 
+            btnNuevaReserva.BackColor = Color.SteelBlue;
+            btnNuevaReserva.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnNuevaReserva.ForeColor = Color.White;
             btnNuevaReserva.Location = new Point(100, 160);
             btnNuevaReserva.Name = "btnNuevaReserva";
             btnNuevaReserva.Size = new Size(220, 35);
             btnNuevaReserva.TabIndex = 3;
             btnNuevaReserva.Text = "Nueva Reserva";
-            btnNuevaReserva.UseVisualStyleBackColor = true;
+            btnNuevaReserva.UseVisualStyleBackColor = false;
             btnNuevaReserva.Click += btnAltaReserva_Click;
             // 
             // btnVerReservas
             // 
+            btnVerReservas.BackColor = Color.SteelBlue;
+            btnVerReservas.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnVerReservas.ForeColor = Color.White;
             btnVerReservas.Location = new Point(100, 205);
             btnVerReservas.Name = "btnVerReservas";
             btnVerReservas.Size = new Size(220, 35);
             btnVerReservas.TabIndex = 4;
             btnVerReservas.Text = "Ver Reservas";
-            btnVerReservas.UseVisualStyleBackColor = true;
+            btnVerReservas.UseVisualStyleBackColor = false;
             btnVerReservas.Click += btnGrillaReservas_Click;
             // 
             // btnReportes
             // 
+            btnReportes.BackColor = Color.SteelBlue;
+            btnReportes.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnReportes.ForeColor = Color.White;
             btnReportes.Location = new Point(100, 250);
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(220, 35);
             btnReportes.TabIndex = 5;
             btnReportes.Text = "Reportes";
-            btnReportes.UseVisualStyleBackColor = true;
+            btnReportes.UseVisualStyleBackColor = false;
             btnReportes.Click += btnReportes_Click;
             // 
             // btnCerrarSesion
             // 
+            btnCerrarSesion.BackColor = Color.SteelBlue;
+            btnCerrarSesion.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnCerrarSesion.ForeColor = Color.White;
             btnCerrarSesion.Location = new Point(140, 305);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(140, 30);
             btnCerrarSesion.TabIndex = 6;
             btnCerrarSesion.Text = "Cerrar Sesión";
-            btnCerrarSesion.UseVisualStyleBackColor = true;
+            btnCerrarSesion.UseVisualStyleBackColor = false;
             btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(434, 361);
             Controls.Add(btnCerrarSesion);
             Controls.Add(btnReportes);

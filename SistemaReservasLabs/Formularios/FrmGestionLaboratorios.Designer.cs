@@ -41,6 +41,7 @@
             btnAgregar = new Button();
             btnModificar = new Button();
             btnEliminar = new Button();
+            btnNuevo = new Button();
             dgvLaboratorios = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvLaboratorios).BeginInit();
             SuspendLayout();
@@ -127,52 +128,77 @@
             // 
             // btnAgregar
             // 
+            btnAgregar.BackColor = Color.SteelBlue;
+            btnAgregar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnAgregar.ForeColor = Color.White;
             btnAgregar.Location = new Point(120, 130);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(100, 30);
             btnAgregar.TabIndex = 10;
             btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += btnAgregar_Click; //bere 
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnModificar
             // 
+            btnModificar.BackColor = Color.SteelBlue;
+            btnModificar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnModificar.ForeColor = Color.White;
             btnModificar.Location = new Point(230, 130);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(100, 30);
             btnModificar.TabIndex = 11;
             btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = true;
-            btnModificar.Click += btnModificar_Click; // bere
+            btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnEliminar
             // 
+            btnEliminar.BackColor = Color.SteelBlue;
+            btnEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnEliminar.ForeColor = Color.White;
             btnEliminar.Location = new Point(340, 130);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(100, 30);
             btnEliminar.TabIndex = 12;
             btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;      //bere
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnNuevo
+            // 
+            btnNuevo.BackColor = Color.SteelBlue;
+            btnNuevo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNuevo.ForeColor = Color.White;
+            btnNuevo.Location = new Point(450, 130);
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(100, 30);
+            btnNuevo.TabIndex = 14;
+            btnNuevo.Text = "Limpiar";
+            btnNuevo.UseVisualStyleBackColor = false;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // dgvLaboratorios
             // 
+            dgvLaboratorios.BackgroundColor = Color.FromArgb(224, 224, 224);
             dgvLaboratorios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvLaboratorios.Location = new Point(20, 175);
             dgvLaboratorios.Name = "dgvLaboratorios";
             dgvLaboratorios.Size = new Size(640, 280);
             dgvLaboratorios.TabIndex = 13;
-            dgvLaboratorios.CellClick += dgvLaboratorios_CellClick;   //bere
+            dgvLaboratorios.CellClick += dgvLaboratorios_CellClick;
             // 
             // FrmGestionLaboratorios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(684, 461);
             Controls.Add(dgvLaboratorios);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
             Controls.Add(btnAgregar);
+            Controls.Add(btnNuevo);
             Controls.Add(txtEquipamiento);
             Controls.Add(txtCapacidad);
             Controls.Add(txtUbicacion);
@@ -208,6 +234,7 @@
         private Button btnAgregar;
         private Button btnModificar;
         private Button btnEliminar;
+        private Button btnNuevo;
         private DataGridView dgvLaboratorios;
     }
 }

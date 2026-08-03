@@ -110,6 +110,11 @@ namespace SistemaReservasLabs.Formularios
             }
         }
 
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
+
         private void dgvLaboratorios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -120,6 +125,8 @@ namespace SistemaReservasLabs.Formularios
             txtUbicacion.Text = fila.Cells["Ubicacion"].Value?.ToString();
             txtCapacidad.Text = fila.Cells["CapacidadPCs"].Value?.ToString();
             txtEquipamiento.Text = fila.Cells["Equipamiento"].Value?.ToString();
+
+            txtId.Enabled = false;
         }
 
         private void LimpiarCampos()
@@ -129,6 +136,7 @@ namespace SistemaReservasLabs.Formularios
             txtUbicacion.Clear();
             txtCapacidad.Clear();
             txtEquipamiento.Clear();
+            txtId.Enabled = true;
         }
     }
 }

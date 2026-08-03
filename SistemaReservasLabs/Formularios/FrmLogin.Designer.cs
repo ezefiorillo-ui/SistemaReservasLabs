@@ -64,18 +64,22 @@
             // 
             // btnIngresar
             // 
+            btnIngresar.BackColor = Color.SteelBlue;
+            btnIngresar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnIngresar.ForeColor = Color.White;
             btnIngresar.Location = new Point(145, 180);
             btnIngresar.Name = "btnIngresar";
             btnIngresar.Size = new Size(100, 32);
             btnIngresar.TabIndex = 3;
             btnIngresar.Text = "Ingresar";
-            btnIngresar.UseVisualStyleBackColor = true;
-            btnIngresar.Click += btnIngresar_Click;  //bere
+            btnIngresar.UseVisualStyleBackColor = false;
+            btnIngresar.Click += btnIngresar_Click;
             // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(384, 261);
             Controls.Add(btnIngresar);
             Controls.Add(cmbUsuarios);

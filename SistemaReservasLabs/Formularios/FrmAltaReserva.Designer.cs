@@ -120,12 +120,15 @@
             // 
             // btnConfirmar
             // 
+            btnConfirmar.BackColor = Color.SteelBlue;
+            btnConfirmar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnConfirmar.ForeColor = Color.White;
             btnConfirmar.Location = new Point(150, 270);
             btnConfirmar.Name = "btnConfirmar";
             btnConfirmar.Size = new Size(150, 35);
             btnConfirmar.TabIndex = 9;
             btnConfirmar.Text = "Confirmar Reserva";
-            btnConfirmar.UseVisualStyleBackColor = true;
+            btnConfirmar.UseVisualStyleBackColor = false;
             btnConfirmar.Click += btnConfirmar_Click;
             // 
             // txtMotivo
@@ -140,6 +143,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(434, 361);
             Controls.Add(txtMotivo);
             Controls.Add(btnConfirmar);

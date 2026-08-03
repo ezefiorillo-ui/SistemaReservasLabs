@@ -74,16 +74,20 @@
             // 
             // btnBuscar
             // 
+            btnBuscar.BackColor = Color.SteelBlue;
+            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBuscar.ForeColor = Color.White;
             btnBuscar.Location = new Point(560, 21);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(100, 25);
             btnBuscar.TabIndex = 4;
             btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.UseVisualStyleBackColor = false;
             btnBuscar.Click += btnBuscar_Click;
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.FromArgb(224, 224, 224);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(20, 65);
             dataGridView1.Name = "dataGridView1";
@@ -104,6 +108,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(684, 461);
             Controls.Add(btnCancelar);
             Controls.Add(dataGridView1);

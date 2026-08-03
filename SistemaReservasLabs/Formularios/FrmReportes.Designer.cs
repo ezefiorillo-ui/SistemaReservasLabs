@@ -55,16 +55,20 @@
             // 
             // btnGenerar
             // 
+            btnGenerar.BackColor = Color.SteelBlue;
+            btnGenerar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGenerar.ForeColor = Color.White;
             btnGenerar.Location = new Point(410, 21);
             btnGenerar.Name = "btnGenerar";
             btnGenerar.Size = new Size(100, 25);
             btnGenerar.TabIndex = 2;
             btnGenerar.Text = "Generar";
-            btnGenerar.UseVisualStyleBackColor = true;
+            btnGenerar.UseVisualStyleBackColor = false;
             btnGenerar.Click += btnGenerar_Click;
             // 
             // dgvReporte
             // 
+            dgvReporte.BackgroundColor = Color.FromArgb(224, 224, 224);
             dgvReporte.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvReporte.Location = new Point(20, 65);
             dgvReporte.Name = "dgvReporte";
@@ -75,6 +79,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(634, 461);
             Controls.Add(dgvReporte);
             Controls.Add(btnGenerar);
