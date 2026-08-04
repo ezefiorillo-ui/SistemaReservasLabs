@@ -10,7 +10,6 @@ namespace SistemaReservasLabs.Modelos
 
     public class Docente : Usuario
     {
-        // TODO: definir con el equipo el límite semanal real de Docente (debe ser > que Alumno)
         private const int LimiteSemanal = 5;
 
         public Docente(string legajo, string nombre) : base(legajo, nombre) { }

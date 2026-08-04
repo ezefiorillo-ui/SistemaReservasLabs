@@ -47,6 +47,12 @@ namespace SistemaReservasLabs.Repositorios
                 throw new ArchivoDatosCorruptoException(
                     $"No se pudo leer el archivo {_rutaArchivo}.", ex);
             }
+            finally
+            {
+                // Punto de cierre garantizado de la operación de lectura, aunque falle: acá centralizamos cualquier limpieza futura
+
+                System.Diagnostics.Debug.WriteLine($"Lectura de {_rutaArchivo} finalizada.");
+            }
         }
 
         public T ObtenerPorId(string id)
@@ -90,10 +96,22 @@ namespace SistemaReservasLabs.Repositorios
         {
             // using: abre el StreamWriter y garantiza que se cierre/libere
             // apenas termina el bloque, aunque ocurra una excepción adentro.
-            using (_streamWriter = new StreamWriter(_rutaArchivo, append: false))
+            try
             {
-                foreach (var item in lista)
-                    _streamWriter.WriteLine(_serializar(item));
+                using (_streamWriter = new StreamWriter(_rutaArchivo, append: false))
+                {
+                    foreach (var item in lista)
+                        _streamWriter.WriteLine(_serializar(item));
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ArchivoDatosCorruptoException(
+                    $"No se pudo escribir en el archivo {_rutaArchivo}.", ex);
+            }
+            finally
+            {
+                System.Diagnostics.Debug.WriteLine($"Escritura en {_rutaArchivo} finalizada.");
             }
         }
 

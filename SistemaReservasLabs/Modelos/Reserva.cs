@@ -46,8 +46,8 @@ namespace SistemaReservasLabs.Modelos
             Fecha.Date < DateTime.Now.Date ||
             (Fecha.Date == DateTime.Now.Date && HoraFin < DateTime.Now.TimeOfDay);
 
-		public string LaboratorioNombre => Laboratorio?.Nombre ?? "";//ESTO ES NUEVO
-		public string UsuarioNombre => Usuario?.Nombre ?? "";//ESTO ES NUEVO
+		public string LaboratorioNombre => Laboratorio?.Nombre ?? "";
+		public string UsuarioNombre => Usuario?.Nombre ?? "";
 
 		// Constructor completo (con motivo)
 		public Reserva(string id, Laboratorio laboratorio, Usuario usuario, DateTime fecha,

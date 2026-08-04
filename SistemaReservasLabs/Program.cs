@@ -52,8 +52,7 @@ namespace SistemaReservasLabs
                 "laboratorios.txt", serializarLaboratorio, deserializarLaboratorio, obtenerIdLaboratorio);
 
             // --- Repositorio de Reservas ---
-            // Ojo: acá serializamos guardando solo los IDs de Laboratorio y Usuario,
-            // y al deserializar los BUSCAMOS en sus repositorios (no los reconstruimos).
+
             Func<Reserva, string> serializarReserva = r =>
                 $"{r.Id}|{r.Laboratorio.Id}|{r.Usuario.Legajo}|{r.Fecha:yyyy-MM-dd}|" +
                 $"{r.HoraInicio}|{r.HoraFin}|{r.Motivo.Replace("|", " ").Replace("\n", " ").Replace("\r", "")}|{r.Estado}";
@@ -81,14 +80,6 @@ namespace SistemaReservasLabs
             var gestorReservas = new GestorReservas(repoReservas, repoLaboratorios);
             var generadorReportes = new GeneradorReportes(repoReservas);
 
-            // --- SEED TEMPORAL: carga usuarios de prueba la primera vez ---
-            //if (repoUsuarios.ListarTodos().Count == 0)
-            //{
-            //    repoUsuarios.Agregar(new Administrador("A001", "Ana Torres"));
-            //    repoUsuarios.Agregar(new Docente("D001", "Carlos Gomez"));
-            //    repoUsuarios.Agregar(new Alumno("AL001", "Lucia Fernandez"));
-            //}
-            // --- FIN SEED TEMPORAL ---
 
             // --- Arranca la app ---
             Application.Run(new FrmLogin(repoUsuarios, repoLaboratorios, repoReservas, gestorReservas, generadorReportes));

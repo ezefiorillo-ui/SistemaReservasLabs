@@ -3,6 +3,7 @@ using SistemaReservasLabs.Logica;
 using SistemaReservasLabs.Modelos;
 using SistemaReservasLabs.Repositorios;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SistemaReservasLabs.Formularios
@@ -25,6 +26,19 @@ namespace SistemaReservasLabs.Formularios
             cmbLaboratorio.DisplayMember = "Nombre";
 
             dtpFecha.MinDate = DateTime.Today; // no dejar elegir fechas pasadas
+
+            Campos_Changed(this, EventArgs.Empty);
+        }
+
+        private void Campos_Changed(object sender, EventArgs e)
+        {
+            if (cmbLaboratorio.SelectedItem is not Laboratorio lab) return;
+
+            bool disponible = _gestorReservas.ConsultarDisponibilidad(
+                lab.Id, dtpFecha.Value, dtpHoraInicio.Value.TimeOfDay, dtpHoraFin.Value.TimeOfDay);
+
+            lblDisponibilidad.Text = disponible ? "✅ Disponible" : "❌ No disponible";
+            lblDisponibilidad.ForeColor = disponible ? Color.Green : Color.Red;
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
@@ -76,6 +90,16 @@ namespace SistemaReservasLabs.Formularios
                 MessageBox.Show(ex.Message, "No se pudo reservar",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void txtMotivo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmAltaReserva_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

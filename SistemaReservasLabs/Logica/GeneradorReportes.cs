@@ -6,8 +6,7 @@ using SistemaReservasLabs.Repositorios;
 
 namespace SistemaReservasLabs.Logica
 {
-    // DTOs simples para devolver los resultados de cada reporte,
-    // sin mezclar la lógica de LINQ con la lógica de Reserva/Laboratorio.
+    
     public class UsoPorLaboratorio
     {
         public string LaboratorioNombre { get; set; }
